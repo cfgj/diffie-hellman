@@ -1,0 +1,17 @@
+{
+  "name": "diffie-helleman",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack",
+    "execute": "node ./dist/output.js"
+  },
+  "author": "Łukasz Kwiatkowski",
+  "license": "MIT",
+  "devDependencies": {
+    "big-integer": "^1.6.23",
+    "json-loader": "^0.5.4",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.3.4",
+    "webpack": "^2.2.1"
+  }
+}
