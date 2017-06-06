@@ -27,8 +27,6 @@ export interface IDiffieHellman extends IExchangeKey {
  * Represents Diffie-Hellman key exchange protocol.
  */
 export class DiffieHellman implements IDiffieHellman {
-    private _maxPrivateKey = 100;
-
     protected _prime: bigInt.BigInteger;
     protected _generator: bigInt.BigInteger;
     protected _privateKey: bigInt.BigInteger;
@@ -68,6 +66,8 @@ export class DiffieHellman implements IDiffieHellman {
     }
 
     protected generatePrivateKey(): bigInt.BigInteger {
-        return bigInt.randBetween(2, this._maxPrivateKey);
+        const two = bigInt(2);
+        // private key should be much larger
+        return bigInt.randBetween(two.pow(4), two.pow(8));
     }
 }

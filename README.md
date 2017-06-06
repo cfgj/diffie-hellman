@@ -1,4 +1,4 @@
-# Diffie-Hellman exchange key protocol
+# Diffie-Hellman key exchange protocol
 Simple implementation of D-H protocol for Computer Network Security lab.
 
 Steps to running example.
