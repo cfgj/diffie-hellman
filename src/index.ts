@@ -1,22 +1,5 @@
-import bigInt = require('big-integer');
-
-import { DHXorEncryptionAlgorithm } from './crypto/dhXorEncryptionAlgorithm';
-
-const generator = bigInt(5);
-
-const alice = new DHXorEncryptionAlgorithm(128, generator);
-const bob = new DHXorEncryptionAlgorithm(alice.prime, alice.generator);
-
-const alicePublicKey = alice.generatePublicKey();
-const bobPublicKey = bob.generatePublicKey();
-
-alice.computeSharedSecretKey(bobPublicKey);
-bob.computeSharedSecretKey(alicePublicKey);
-
-const message = 'Lorem ipsum dolor sit amet.';
-const ciphertext = alice.encrypt(message);
-const decryptedMessage = bob.decrypt(ciphertext);
-
-console.log(`Origial message: ${message}`);
-console.log(`Ciphertext: ${ciphertext}`);
-console.log(`Decrypted message: ${decryptedMessage}`);
+export  { IExchangeKey } from './lib/exchangeKey';
+export  { DiffieHellman } from './lib/diffieHellman';
+export  { IEncryptor } from './lib/encryptor';
+export  { DiffieHellmanEncryptor } from './lib/diffieHellmanEncryptor';
+export  { DHXorEncryptionAlgorithm } from './lib/dhXorEncryptionAlgorithm';

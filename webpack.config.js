@@ -1,7 +1,14 @@
+var path = require('path');
+
 module.exports = {
-    entry: './src/index.ts',
+    entry: {
+        dh: './src/index.ts',
+        simpleExample: './examples/simple.ts',
+        tcpipExample: './examples/alice.ts'
+    },
     output: {
-        filename: 'dist/output.js'
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].js'
     },
     devtool: 'source-map',
     resolve: {
